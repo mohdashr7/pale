@@ -1,0 +1,251 @@
+
+body {
+    background-color: #70FAFA;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease; /* تأثير الظهور */
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.show-popup {
+    display: block;
+    animation: slideIn 0.5s ease; /* تأثير الانتقال */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -150%); }
+    to { transform: translate(-50%, -50%); }
+}
+
+
+
+.head {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    animation: fadeIn 5s;
+}
+
+.first {
+    color: #FA7070;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .25em solid orange;
+    font-size: 1.5em;
+    animation: typing 3s steps(40), cursor .5s step-end infinite alternate;
+    width: auto; /* تعيين عرض النص */
+}
+
+.why {    
+    color: #9CAFAA;
+    animation: fadeIn 5s;
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+
+  .first, .why {
+    display: inline; /* جعل النصين يظهران في نفس السطر */
+    /* Add any additional styles for the text if needed */
+}  
+.start{
+    text-align: center;
+    color: #A1C398;
+    background-color: #FA7070 ;
+ max-width: 100%;
+       
+    
+}
+
+.bat{
+    
+        max-width: 100%; /* تحديد أقصى عرض مسموح للصورة */
+        height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    
+        border: 10px solid #B5FA70;
+        border-radius: 20px;
+        padding: 5px;
+}
+
+.dow{
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.firchap{
+    background-color: #FA7070;
+
+    font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 0; /* تبدأ بالشفافية */
+  transition: opacity 1s ease-in-out; /* تعيين تأثير التحول */
+
+
+
+
+}
+
+.firchap.active {
+    opacity: 1; /* عندما تصل إلى المكان المحدد، قم بإلغاء الشفافية */
+}
+
+
+.source{
+    text-decoration: none; /* إزالة الخط السفلي من النص */
+
+}
+
+
+.sec{
+    background-color: #B5FA70;
+    transform: translateY(20px); /* يبدأ العنصر بالانزلاق من الأعلى */
+    transition: opacity 1s ease, transform 1s ease; /* تأثير الانتقال والظهور */
+
+    font-family: "Sedan SC", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.sec.active {
+    opacity: 1;
+    transform: translateY(0); /* يتحرك العنصر إلى الأعلى عند الظهور */
+}
+
+
+.te{
+    text-decoration: underline;
+
+}
+
+.container {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    perspective: 1000px; /* تحديد النظرة الثلاثية للعناصر ثلاثية الأبعاد */
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease; /* تحديد تأثير الانتقال */
+    transform-origin: center center;
+}
+
+.text {
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    transform: translateY(-100%); /* يبدأ النص من الأعلى وينزل بانتقال */
+    transition: transform 0.5s ease; /* تحديد تأثير الانتقال */
+    opacity: 0; /* يكون النص غير مرئي في البداية */
+}
+
+.container:hover .image {
+    transform: scale(1.1); /* تحجيم الصورة عند المرور بالماوس عليها */
+}
+
+.container:hover .text {
+    transform: translateY(0); /* ينزل النص إلى موضعه عند المرور بالماوس على الصندوق */
+    opacity: 1; /* يظهر النص عند المرور بالماوس على الصندوق */
+}
+
+@media screen and (max-width:1024px){
+    aside{float: left;height: auto;}
+    .conteneur,text,image,.te,.sec,.hi,.firchap,.why,.start,.popup{width: 600px;}
+    .item{width: 120px;}
+    nav,nav ul{width: 620px;}
+}
+
+@media screen and (max-width:620px){
+    .conteneur,text,image,.te,.sec,.hi,.firchap,.why,.start,.popup,nav,nav ul,.item{width: auto;}
+    .conteneur,text,image,.te,.sec,.hi,.firchap,.why,.start,.popup,nav,nav ul,.item{height: auto;}.
+    nav ul li{
+        float: none;
+        background: none;
+        border-radius: 15px;
+        box-shadow: 4px 4px 5px #999;
+    }
+
+    
+}
+
+.coins{
+    border-radius: 10px; /* جعل الحواف مستديرة بنسبة 10 بكسل */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+    width: 150px; 
+    height: auto; /* حفظ تناسب الصورة */
+    transition: filter 0.5s ease; /* إضافة تأثير الانتقال بمدة 0.5 ثانية */
+
+
+}
+
+.coins:hover {
+    filter: grayscale(100%); /* تحويل الصورة لأبيض وأسود عند المرور بالماوس */
+    transform: scale(1.1); /* زيادة حجم الصورة بنسبة 10% عند المرور بالماوس */
+
+}
+
+
+@media  screen and (max-width: 600px) {
+
+    .popup,.first,.why,.lets,.firchap,.sec {
+        font-size: 23px;
+        text-align: center;
+    }
+}
+
+@media  screen and (min-width: 601px) and (max-width: 1024px) {
+.popup,.first,.why,.lets,.firchap,.sec {
+        font-size: 16px;
+    }
+}
+
+@media  screen and (min-width: 1025px) {
+    .popup,.first,.why,.lets,.firchap,.sec {
+        font-size: 18px;
+    }
+}
